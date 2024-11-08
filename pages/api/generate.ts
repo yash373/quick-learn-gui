@@ -4,7 +4,7 @@ import Groq from "groq-sdk";
 
 const groq = new Groq();
 
-type Data = {
+export type Data = {
   plan: string;
 };
 

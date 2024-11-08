@@ -5,12 +5,17 @@ import { useState } from 'react'
 import Submit from '@/components/Submit'
 import Result from '@/components/Result'
 
+
+interface Data {
+  plan: string;
+}
+
 const Index = () => {
   const [exam, setExam] = useState("")
   const [syllabus, setSyllabus] = useState("")
   const [time, setTime] = useState("")
   const [context, setContext] = useState("")
-  const [result, setResult] = useState<string | any>("")
+  const [result, setResult] = useState<Data | null>(null)
   const [status, setStatus] = useState("Not submitted")
 
   const submit = () => {
