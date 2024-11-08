@@ -6,7 +6,7 @@ interface Props {
 
 const Submit = ({ onClick }: Props) => {
     return (
-        <button onClick={onClick} >Submit</button>
+        <button onClick={onClick} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Submit</button>
     )
 }
 

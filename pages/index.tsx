@@ -20,17 +20,19 @@ const Index = () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({exam, time, syllabus, context})
+      body: JSON.stringify({ exam, time, syllabus, context })
     }).then(res => res.json()).then(data => setResult(data)).catch(err => console.log(err)).finally(() => setStatus("Internal server error"))
   }
 
   return (
-    <div className='flex flex-col gap-2'>
+    <div className='flex items-center justify-center h-[100vh] flex-col gap-5'>
       <Heading text="Quick Learn" />
-      <TextField placeholder='Exam Name: (ex: SST Pre-board)' value={exam} onChange={(val) => setExam(val)} />
-      <TextField placeholder='Syllabus: (ex: SST Pre-board)' value={syllabus} onChange={(val) => setSyllabus(val)} />
-      <TextField placeholder='Time: (ex: 9 days)' value={time} onChange={(val) => setTime(val)} />
-      <TextField placeholder='Context: (ex: I am bad at history)' value={context} onChange={(val) => setContext(val)} />
+      <div className='flex flex-col gap-3'>
+        <TextField placeholder='Exam Name: (ex: SST Pre-board)' value={exam} onChange={(val) => setExam(val)} />
+        <TextField placeholder='Syllabus: (ex: SST Pre-board)' value={syllabus} onChange={(val) => setSyllabus(val)} />
+        <TextField placeholder='Time: (ex: 9 days)' value={time} onChange={(val) => setTime(val)} />
+        <TextField placeholder='Context: (ex: I am bad at history)' value={context} onChange={(val) => setContext(val)} />
+      </div>
       <Submit onClick={submit} />
     </div>
   )
