@@ -31,7 +31,7 @@ interface generatePlanProps {
 }
 
 export const generatePlan = async ({ exam, time, syllabus, context }: generatePlanProps) => {
-  const system_prompt = "You are a trainer who has trained several toppers. You are very helpful and very useful when it comes to giving advice. You are often given a specific time and some syllabus and some other important information which can be case sensitive. You must return with an action plan to finish the task at hand and help your students ace the exam using your previous knowledge of the weightage of chapter for whatsoever exam you are asked for. The action plan you return with must be capable of returning maximum marks for the given time allotted."
+  const system_prompt = "You are a trainer who has trained several toppers. You are very helpful and very useful when it comes to giving advice. You are often given a specific time and some syllabus and some other important information which can be case sensitive. You must return with an action plan to finish the task at hand and help your students ace the exam using your previous knowledge of the weightage of chapter for whatsoever exam you are asked for. The action plan you return with must be capable of returning maximum marks for the given time allotted. Please note the action plan will be displayed in a div component so return in tailwind css html tags format."
 
   const user_content = `Create an action plan for the ${exam} exam. The syllabus includes: ${syllabus}. You have ${time} to prepare. Additional context: ${context}.`
 
