@@ -5,17 +5,22 @@ import Groq from "groq-sdk";
 const groq = new Groq();
 
 type Data = {
-  name: string;
+  plan: string;
 };
 
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>,
 ) {
-  console.log(req.body)
+  const { exam, time, syllabus, context } = req.body
 
-  res.status(200).json({ name: "John Doe" });
+  const plan = await generatePlan({exam, time, syllabus, context})
+
+  // console.log(exam, time, syllabus, context)
+  // console.log(plan.choices[0]?.message?.content || "")
+
+  res.status(200).json({ plan: plan.choices[0]?.message?.content || "" });
 }
 
 interface generatePlanProps {
