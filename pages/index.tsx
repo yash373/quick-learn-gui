@@ -28,7 +28,7 @@ const Index = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ exam, time, syllabus, context })
-    }).then(res => res.json()).then(data => setResult(data)).catch(err => console.log(err)).finally(() => setStatus("Internal server error"))
+    }).then(res => res.json()).then(data => setResult(data))
 
     setStatus("Result")
   }
