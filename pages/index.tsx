@@ -3,13 +3,14 @@ import Heading from '@/components/Heading'
 import TextField from '@/components/TextField'
 import { useState } from 'react'
 import Submit from '@/components/Submit'
+import Result from '@/components/Result'
 
 const Index = () => {
   const [exam, setExam] = useState("")
   const [syllabus, setSyllabus] = useState("")
   const [time, setTime] = useState("")
   const [context, setContext] = useState("")
-  const [result, setResult] = useState("")
+  const [result, setResult] = useState<string | any>("")
   const [status, setStatus] = useState("Not submitted")
 
   const submit = () => {
@@ -22,11 +23,14 @@ const Index = () => {
       },
       body: JSON.stringify({ exam, time, syllabus, context })
     }).then(res => res.json()).then(data => setResult(data)).catch(err => console.log(err)).finally(() => setStatus("Internal server error"))
+
+    setStatus("Result")
   }
 
   return (
     <div className='flex items-center justify-center h-[100vh] flex-col gap-5'>
       <Heading text="Quick Learn" />
+      <Heading text={`Status: ${status}`} />
       <div className='flex flex-col gap-3'>
         <TextField placeholder='Exam Name: (ex: SST Pre-board)' value={exam} onChange={(val) => setExam(val)} />
         <TextField placeholder='Syllabus: (ex: SST Pre-board)' value={syllabus} onChange={(val) => setSyllabus(val)} />
@@ -34,6 +38,7 @@ const Index = () => {
         <TextField placeholder='Context: (ex: I am bad at history)' value={context} onChange={(val) => setContext(val)} />
       </div>
       <Submit onClick={submit} />
+      {result && <Result result={result.plan} />}
     </div>
   )
 }
