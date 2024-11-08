@@ -9,15 +9,19 @@ const Index = () => {
   const [syllabus, setSyllabus] = useState("")
   const [time, setTime] = useState("")
   const [context, setContext] = useState("")
+  const [result, setResult] = useState("")
+  const [status, setStatus] = useState("Not submitted")
 
   const submit = () => {
+    setStatus("Loading...")
+
     fetch('/api/generate', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({exam, time, syllabus, context})
-    }).then(res => res.json()).then(data => console.log(data))
+    }).then(res => res.json()).then(data => setResult(data)).catch(err => console.log(err)).finally(() => setStatus("Internal server error"))
   }
 
   return (
