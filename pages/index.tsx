@@ -11,10 +11,13 @@ const Index = () => {
   const [context, setContext] = useState("")
 
   const submit = () => {
-    // alert(exam)
-    // alert(syllabus)
-    // alert(time)
-    // alert(context)
+    fetch('/api/generate', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({exam, time, syllabus, context})
+    }).then(res => res.json()).then(data => console.log(data))
   }
 
   return (
