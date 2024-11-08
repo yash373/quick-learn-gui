@@ -1,40 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Quick Learn
 
-## Getting Started
+Quick Learn is a web tool designed specifically for students to help them maximize their marks per unit time. This tool provides an action plan to effectively prepare for exams by utilizing the given syllabus, time, and context. The goal is to aid students in achieving the best possible results by optimizing their study schedule.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Personalized Action Plans**: Generate customized study plans tailored to your exam needs, taking into account the specific syllabus, time constraints, and any additional context you provide.
+- **User-Friendly Interface**: Easily input your exam details and receive a structured action plan in return.
+- **Tailwind CSS Integration**: The action plans are displayed in a clean and responsive format using Tailwind CSS.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. **Visit the Website**: Go to [Quick Learn](https://quick-learn-gui.vercel.app/).
+2. **Enter Exam Details**: Fill in the exam name, syllabus, available preparation time, and any additional context or challenges you face.
+3. **Generate Plan**: Click the submit button to receive your personalized study plan.
+4. **Follow the Plan**: Use the action plan to guide your study sessions and maximize your efficiency.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Technologies
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+- **React**: For building the user interface.
+- **Next.js**: For server-side rendering and routing.
+- **Tailwind CSS**: For styling the components.
+- **Groq SDK**: To interact with the backend API for generating study plans.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Contributing
 
-## Learn More
+Contributions are welcome! Please fork the repository and submit a pull request if you have any improvements or new features to add.
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+Empower your exam preparations with Quick Learn and make the most of your study time!
