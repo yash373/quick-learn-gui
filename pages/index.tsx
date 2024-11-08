@@ -4,6 +4,7 @@ import TextField from '@/components/TextField'
 import { useState } from 'react'
 import Submit from '@/components/Submit'
 import Result from '@/components/Result'
+import Footer from '@/components/Footer'
 
 
 interface Data {
@@ -44,6 +45,7 @@ const Index = () => {
       </div>
       <Submit onClick={submit} />
       {result && <Result result={result.plan} />}
+      <Footer />
     </div>
   )
 }
