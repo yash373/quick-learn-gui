@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://quick-learn-gui.vercel.app/
+
+# Sitemaps
+Sitemap: https://quick-learn-gui.vercel.app/sitemap.xml
